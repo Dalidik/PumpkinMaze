@@ -14,13 +14,17 @@ public class KeyCollect : MonoBehaviour
 
     public AudioClip EndSound;
     public AudioClip StartSound;
+    public AudioClip KeyCollectAud;
     AudioSource _source;
+
+    public GameObject WinnerPic;
 
     private void Start()
     {
         _source = GetComponent<AudioSource>();
         
         findOutText.SetActive(false);
+
         
         _source.clip = StartSound;
         _source.Play();
@@ -34,13 +38,14 @@ public class KeyCollect : MonoBehaviour
     {
         if(other.gameObject.tag == "Key")
         {
-          
             keys = keys + 1;
             Destroy(other.gameObject);
+             _source.PlayOneShot(KeyCollectAud);
         }
         if (other.gameObject.tag == "Finish" &&  keys == 3)
         {
             Time.timeScale = 0;
+
             SceneManager.LoadScene("End");
             Destroy(findOutText);
         }

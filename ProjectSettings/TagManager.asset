@@ -8,6 +8,7 @@ TagManager:
   - Key
   - Points
   - Enemy
+  - out
   layers:
   - Default
   - TransparentFX
