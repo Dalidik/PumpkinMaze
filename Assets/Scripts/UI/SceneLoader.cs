@@ -9,25 +9,10 @@ using AsyncOperation = UnityEngine.AsyncOperation;
 
 public class SceneLoader : MonoBehaviour
 {
-    public GameObject LoadingScreen;
-    public Image LoadingBarFill;
 
-
-     public void LoadScene(int sceneId)
-     {
-       StartCoroutine(LoadSceneAsync(sceneId));
-     }
-    
-    IEnumerator LoadSceneAsync(int sceneId)
+    public void Loading()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneId);
-        LoadingScreen.SetActive(true);
-
-        while (!operation.isDone)
-        {
-            float progressValue = Mathf.Clamp01(operation.progress / .9f); 
-            LoadingBarFill.fillAmount = progressValue;
-            yield return null;
-        }
+        SceneManager.LoadScene(0);
     }
+
 }

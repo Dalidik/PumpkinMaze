@@ -9,6 +9,8 @@ TagManager:
   - Points
   - Enemy
   - out
+  - in
+  - Reach
   layers:
   - Default
   - TransparentFX

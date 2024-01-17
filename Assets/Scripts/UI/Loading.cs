@@ -7,6 +7,7 @@ public class Loading : MonoBehaviour
 {
     [SerializeField] int timeToWait = 5;
     int currentSceneIndex;
+    [SerializeField] int scene;
 
     private void Start()
     {
@@ -26,6 +27,6 @@ public class Loading : MonoBehaviour
 
     void LoadNextScene()
     {
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        SceneManager.LoadScene(scene);
     }
 }
