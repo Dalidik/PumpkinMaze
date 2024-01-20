@@ -3,27 +3,35 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor.SearchService;
 
 public class Death : MonoBehaviour
 {
-    KeyCollect keyCollect;
-    public GameObject death;
+   
+    public GameObject Timeline;
     public GameObject hud;
     public GameObject inv;
-    public GameObject keyText;
+    public AudioSource PoliceSound;
+  
 
+    private void Start()
+    {
+        Timeline.SetActive(false);
+       PoliceSound.Play();
+    }
 
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
-         
-            Time.timeScale = 0;
-            death.SetActive(true);
+            PoliceSound.Stop();
+            Timeline.SetActive(true);
             hud.SetActive(false);
             inv.SetActive(false);
-            keyText.SetActive(false);
+           
            
         }
     }
+  
 }
+

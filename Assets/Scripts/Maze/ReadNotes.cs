@@ -12,6 +12,7 @@ public class ReadNotes : MonoBehaviour
     public ButtonPress butPress;
     public GameObject pickUpText;
     public Button backBut;
+    public AudioSource source;
 
     public bool inReach;
 
@@ -53,7 +54,7 @@ public class ReadNotes : MonoBehaviour
     {
         if (butPress.buttonPressed == true && inReach)
         {
-          
+          source.Play();
             noteUI.SetActive(true);
            
             hud.SetActive(false);
@@ -72,7 +73,7 @@ public class ReadNotes : MonoBehaviour
             noteUI.SetActive(false);
             hud.SetActive(true);
             inv.SetActive(true);
-           
+            source.Play();
         }
 
     }

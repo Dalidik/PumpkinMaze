@@ -9,6 +9,8 @@ public class OpenDoorWithKey : MonoBehaviour
     public GameObject openText;
     public GameObject keyMissingText;
     public AudioSource openSound;
+    public AudioSource Voice;
+    
     public GameObject TridderScript;
     public bool inReach;
     public bool isOpen;
@@ -60,6 +62,7 @@ public class OpenDoorWithKey : MonoBehaviour
 
         else if (keyOBNeeded.activeInHierarchy == false && inReach && butPress.buttonPressed == true)
         {
+            Voice.Play();
             openText.SetActive(false);
             keyMissingText.SetActive(true);
         }

@@ -260,7 +260,6 @@ GameObject:
   - component: {fileID: 987795674609730730}
   - component: {fileID: 985126523750316447}
   - component: {fileID: 4446919825320428429}
-  - component: {fileID: 7484871819437386022}
   - component: {fileID: 3911647380070376666}
   m_Layer: 6
   m_Name: PlayerBody
@@ -374,6 +373,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _FixedTouchField: {fileID: 0}
   _CameraLook: {fileID: 4443945844361404917}
+  ActionBut: {fileID: 0}
 --- !u!143 &985126523750316447
 CharacterController:
   m_ObjectHideFlags: 0
@@ -414,20 +414,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
   SpeedMove: 5
---- !u!114 &7484871819437386022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8217042623266793717}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e22efb5ec7d6d1a408506dddb31cb57c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  keys: 0
-  keyText: {fileID: 0}
 --- !u!114 &3911647380070376666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,6 +427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   death: {fileID: 0}
+  hud: {fileID: 0}
+  inv: {fileID: 0}
 --- !u!1001 &1239518938856316501
 PrefabInstance:
   m_ObjectHideFlags: 0

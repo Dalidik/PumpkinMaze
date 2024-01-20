@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Notifications.iOS;
+
 using UnityEngine;
 
 
@@ -17,7 +17,7 @@ public class Screamer : MonoBehaviour
         source = GetComponent<AudioSource>();
        
        
-        InvokeRepeating("PlayClipAndChange", 15.0f, 30.0f);
+        InvokeRepeating("PlayClipAndChange", 120.0f, 30.0f);
         
     }
 

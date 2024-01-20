@@ -11,11 +11,9 @@ public class Loading : MonoBehaviour
 
     private void Start()
     {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        if(currentSceneIndex == 0)
-        {
+       
             StartCoroutine(WaitForTime());
-        }
+        
 
     }
 
