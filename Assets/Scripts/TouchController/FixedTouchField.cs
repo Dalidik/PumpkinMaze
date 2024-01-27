@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class FixedTouchField : MonoBehaviour , IPointerDownHandler, IPointerUpHandler
 {
@@ -14,6 +15,10 @@ public class FixedTouchField : MonoBehaviour , IPointerDownHandler, IPointerUpHa
     [HideInInspector]
     public bool Pressed;
 
+    public Slider slider;
+
+
+    public float RotationSpeed = 1f;
     // Use this for initialization
     void Start()
     {
@@ -23,16 +28,18 @@ public class FixedTouchField : MonoBehaviour , IPointerDownHandler, IPointerUpHa
     // Update is called once per frame
     void Update()
     {
+        
+
         if (Pressed)
         {
             if (PointerId >= 0 && PointerId < Input.touches.Length)
             {
-                TouchDist = Input.touches[PointerId].position - PointerOld;
-                PointerOld = Input.touches[PointerId].position;
+                TouchDist = Input.touches[PointerId].position * RotationSpeed - PointerOld;
+                PointerOld = Input.touches[PointerId].position * RotationSpeed ;
             }
             else
             {
-                TouchDist = new Vector2(Input.mousePosition.x, Input.mousePosition.y) - PointerOld;
+                TouchDist = new Vector2(Input.mousePosition.x , Input.mousePosition.y ) - PointerOld;
                 PointerOld = Input.mousePosition;
             }
         }

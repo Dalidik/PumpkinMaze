@@ -6,14 +6,25 @@ using UnityEngine.UI;
 
 public class Finish : MonoBehaviour
 {
+    public GameObject TimelineFinish;
   
+
+    private void Start()
+    {
+        TimelineFinish.SetActive(false);
+       
+    }
+
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Finish")
         {
-            Time.timeScale = 0;
+           
 
-            SceneManager.LoadScene("End");
+            TimelineFinish.SetActive(true);
+           
 
         }
     }

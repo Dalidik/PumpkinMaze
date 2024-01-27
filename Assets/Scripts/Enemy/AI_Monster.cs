@@ -14,8 +14,9 @@ public class AI_Monster : MonoBehaviour
     
     public enum AI_State { Patrol, Chase };
     public AI_State AI_Enemy;
-   
-    
+
+    public AudioSource source;
+  
    
    
 
@@ -33,7 +34,7 @@ public class AI_Monster : MonoBehaviour
         
         if (AI_Enemy == AI_State.Patrol )
         {
-           
+          
 
             AI_Agent.speed = 3.5f;
             gameObject.GetComponent<Animator>().SetBool("Patrol", true);
@@ -49,8 +50,8 @@ public class AI_Monster : MonoBehaviour
         
         if (AI_Enemy == AI_State.Chase )
         {
-          
-
+            
+            source.Play();
             AI_Agent.speed = 4.8f;
             gameObject.GetComponent<Animator>().SetBool("Run", true);
             gameObject.GetComponent<Animator>().SetBool("Patrol", false);

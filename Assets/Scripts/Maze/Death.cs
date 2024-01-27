@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using UnityEditor.SearchService;
+
+
 
 public class Death : MonoBehaviour
 {
@@ -12,7 +12,7 @@ public class Death : MonoBehaviour
     public GameObject hud;
     public GameObject inv;
     public AudioSource PoliceSound;
-  
+    
 
     private void Start()
     {
@@ -32,6 +32,7 @@ public class Death : MonoBehaviour
            
         }
     }
-  
+    
+
 }
 

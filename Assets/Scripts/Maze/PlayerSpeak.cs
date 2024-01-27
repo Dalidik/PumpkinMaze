@@ -29,8 +29,8 @@ public class PlayerSpeak : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
 
-            
-            Destroy(trigger, 5f);
+            Destroy(SpeakText, 4f);
+            Destroy(trigger, 0.1f);
         }
     }
 }
